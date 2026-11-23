@@ -26,7 +26,7 @@ app.use(async (req, res, next) => {
     }
 
     next();
-  } catch (error) {
+  } catch {
     res.status(500).json({
       error: 'Internal server error',
     });
@@ -47,7 +47,7 @@ app.get('/api/messages/:forum', async (req, res) => {
     const messages = getMessagesByForum(forum);
 
     return res.status(200).json(messages);
-  } catch (error) {
+  } catch {
     return res.status(500).json({
       error: 'Failed to retrieve messages',
     });
@@ -117,7 +117,7 @@ app.post('/api/messages/:forum', async (req, res) => {
     addMessage(forum, message);
 
     return res.status(201).json(message);
-  } catch (error) {
+  } catch {
     return res.status(500).json({
       error: 'Failed to create message',
     });
@@ -125,6 +125,8 @@ app.post('/api/messages/:forum', async (req, res) => {
 });
 
 // Handle malformed JSON body
+// Express nhận biết error handler qua đúng 4 tham số nên `next` phải giữ lại.
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
   if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
     return res.status(400).json({

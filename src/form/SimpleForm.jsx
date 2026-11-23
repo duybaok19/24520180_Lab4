@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { validateForm } from './validate';
 import { FormContext, useFormContext } from './FormContext';
 import InputField from './InputField';
+import ShowData from './ShowData';
 
 function FormFields() {
   const {
@@ -16,49 +17,58 @@ function FormFields() {
   } = useFormContext();
 
   return (
-    <form noValidate onSubmit={handleSubmit}>
-      <fieldset>
-        <legend>Thông tin cá nhân</legend>
+    <>
+      <form noValidate onSubmit={handleSubmit}>
+        <fieldset>
+          <legend>Thông tin cá nhân</legend>
 
-        <InputField
-          label="Họ tên"
-          name="fullName"
-          type="text"
-          value={values.fullName}
-          error={
-            touched.fullName || submitted ? errors.fullName : undefined
-          }
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
+          <InputField
+            label="Họ tên"
+            name="fullName"
+            type="text"
+            value={values.fullName}
+            error={
+              touched.fullName || submitted ? errors.fullName : undefined
+            }
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
 
-        <InputField
-          label="Email"
-          name="email"
-          type="email"
-          value={values.email}
-          error={
-            touched.email || submitted ? errors.email : undefined
-          }
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
+          <InputField
+            label="Email"
+            name="email"
+            type="email"
+            value={values.email}
+            error={
+              touched.email || submitted ? errors.email : undefined
+            }
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
 
-        <InputField
-          label="Tuổi"
-          name="age"
-          type="text"
-          value={values.age}
-          error={
-            touched.age || submitted ? errors.age : undefined
-          }
-          onChange={handleChange}
-          onBlur={handleBlur}
-        />
-      </fieldset>
+          <InputField
+            label="Tuổi"
+            name="age"
+            type="text"
+            value={values.age}
+            error={
+              touched.age || submitted ? errors.age : undefined
+            }
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+        </fieldset>
 
-      <button type="submit">Gửi</button>
-    </form>
+        <button type="submit">Gửi</button>
+      </form>
+
+      {submitted !== null && (
+        <section aria-label="Submitted data">
+          <h2>Dữ liệu đã gửi</h2>
+          <ShowData data={submitted} />
+        </section>
+      )}
+    </>
   );
 }
 

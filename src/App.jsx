@@ -4,6 +4,7 @@ import { PEOPLE } from './data/people';
 import PeopleLayout from './people/PeopleLayout';
 import PersonDetail from './people/PersonDetail';
 import NotFound from './people/NotFound';
+import SimpleForm from './form/SimpleForm';
 
 import './people/people.css';
 
@@ -23,7 +24,7 @@ function App() {
           element={<PersonDetail people={PEOPLE} />}
         />
       </Route>
-
+      <Route path="/form" element={<SimpleForm />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

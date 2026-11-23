@@ -1,8 +1,8 @@
-
 import { Routes, Route, Navigate } from 'react-router';
 
 import { PEOPLE } from './data/people';
 import PeopleLayout from './people/PeopleLayout';
+import PersonDetail from './people/PersonDetail';
 import NotFound from './people/NotFound';
 
 import './people/people.css';
@@ -17,6 +17,11 @@ function App() {
           index
           element={<p>Chọn một người ở danh sách bên trái.</p>}
         />
+
+        <Route
+          path=":id"
+          element={<PersonDetail people={PEOPLE} />}
+        />
       </Route>
 
       <Route path="*" element={<NotFound />} />
@@ -25,4 +30,5 @@ function App() {
 }
 
 export default App;
+
 

@@ -2,7 +2,7 @@
 
 **Môn:** Web Application Development — Lab 4
 **Phạm vi:** Exercise 1 (Sprint 1), Exercise 2 (Sprint 2), Exercise 3 (Sprint 3) + setup + chuẩn bị Live Defense
-**Sinh viên:** _(họ tên + MSSV)_ | **Ngày:** _(điền ngày)_
+**Sinh viên:** 24520180-Phan Lê Duy Bảo
 
 > **RULE (Anti-Monolithic):** 1 prompt = 1 sub-task. Không dán nguyên đề vào AI. Vòng lặp bắt buộc cho MỌI task có code (slide 8): **[1] Contract → [2] Fail Test → [3] Implement → [4] Refactor**. Mọi prompt đính kèm `project-rules.md`. Mỗi commit dùng conventional commits.
 
@@ -423,4 +423,47 @@ Tự bấm giờ cho từng đề.
 ```
 git log --oneline
 ```
-_(dán kết quả vào đây trước khi nộp)_
+_(9a9df81 (HEAD -> main, origin/main) docs: add ai failure audit
+e6f6a1a docs: add full-stack error log verification
+abd2888 chore: configure eslint for server and remove unused catch bindings
+09937d6 feat: useForumMessages hook with abort
+ad3a4de feat: express forum rest api
+0c812ca test: add fail tests for forum api and hook
+d70c95a feat: inspector output
+:...skipping...
+9a9df81 (HEAD -> main, origin/main) docs: add ai failure audit
+e6f6a1a docs: add full-stack error log verification
+abd2888 chore: configure eslint for server and remove unused catch bindings
+09937d6 feat: useForumMessages hook with abort
+ad3a4de feat: express forum rest api
+0c812ca test: add fail tests for forum api and hook
+d70c95a feat: inspector output
+6063261 feat: input field validation
+:...skipping...
+9a9df81 (HEAD -> main, origin/main) docs: add ai failure audit
+e6f6a1a docs: add full-stack error log verification
+abd2888 chore: configure eslint for server and remove unused catch bindings
+09937d6 feat: useForumMessages hook with abort
+ad3a4de feat: express forum rest api
+0c812ca test: add fail tests for forum api and hook
+d70c95a feat: inspector output
+6063261 feat: input field validation
+a7258c3 feat: form context
+e320c2c test: add fail test for form validation
+:...skipping...
+9a9df81 (HEAD -> main, origin/main) docs: add ai failure audit
+e6f6a1a docs: add full-stack error log verification
+abd2888 chore: configure eslint for server and remove unused catch bindings
+09937d6 feat: useForumMessages hook with abort
+ad3a4de feat: express forum rest api
+0c812ca test: add fail tests for forum api and hook
+d70c95a feat: inspector output
+6063261 feat: input field validation
+a7258c3 feat: form context
+e320c2c test: add fail test for form validation
+d08dae7 feat: detail route handling
+177cfaf feat: router layout
+15661a8 test: add fail test for people router
+8a58b0b docs: define contract spec in project-rules.md
+564689e init: scaffold lab 4 multi-route SPA
+~)_

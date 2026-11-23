@@ -1,0 +1,70 @@
+:root {
+  --color-text: #1f2937;
+  --color-background: #ffffff;
+  --color-border: #d1d5db;
+  --color-link: #374151;
+  --color-active: #1d4ed8;
+  --color-active-background: #dbeafe;
+}
+
+.people-frame {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) 2fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.people-frame nav {
+  border-right: 1px solid var(--color-border);
+  padding-right: 1rem;
+}
+
+.people-frame ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.people-frame li {
+  margin-bottom: 0.75rem;
+}
+
+.people-frame a {
+  display: block;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.people-frame .link {
+  color: var(--color-link);
+}
+
+.people-frame .link:hover {
+  background-color: var(--color-active-background);
+}
+
+.people-frame .active-link {
+  color: var(--color-active);
+  background-color: var(--color-active-background);
+  font-weight: 700;
+}
+
+.people-frame main {
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .people-frame {
+    grid-template-columns: 1fr;
+  }
+
+  .people-frame nav {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
+}
